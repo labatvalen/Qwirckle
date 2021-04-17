@@ -1,0 +1,91 @@
+
+\newpage
+	\section*{Introduction}
+	\addcontentsline{toc}{chapter}{Introduction}
+	1) Dans l'introduction, récapitule le problème demandé
+	NE PAS OUBLIER LES COMMENTAIRES DANS LE CODE !!!!
+Dans le cadre de notre projet d'informatique, nous allons étudier 
+Notre projet de fin d'année se fait par groupes de trois étudiants au maximum.  Il  consiste  à  réaliser  un  programme en  Pascal  qui  permet  de  jouer à Qwirkle. Conçu en 2006 par Susan McKinley Ross, Qwirkle est un jeu de société à base de tuiles qui a  obtenu de  nombreuses récompenses  dont le  très renommé “Spiel des Jahres”  (jeu  de  l'année) 2011 en Allemagne. Les règles officielles du jeu sont expliquées à la fin de cet énoncé.
+
+
+L'objectif de ce projet de fin de semestre est de créer une version informatique du jeu Qwirkle.
+
+Vous déposerez sur Arel une archive au format tgz (pour les terminaleu(ses)x, n'oubliez pas l'option z de la commande tar...) contenant : 
+
+     * L'ensemble de vos fichiers sources ;
+
+     * Un fichier README(.md) contenant les noms des membres du groupes, les commandes de compilation et d'exécution ainsi que d'éventuelles autres options de configuration/lancement ;
+
+     * Un rapport au format PDF.
+
+NE METTEZ PAS DE FICHIER COMPILÉ DANS VOTRE ARCHIVE. Si vous utilisez des images, portez attention à leur résolution...
+
+Vous serez évalués notamment sur les critères suivants :
+
+     * Un projet qui fonctionne (compilation et exécution) ;
+
+     * Un code clair, concis, correctement découpé sous forme d'unités fonctionnelles, d'une complexité "au plus juste" et EXHAUSTIVEMENT COMMENTÉ ;
+
+     * Un rendu CORRECT et effectué À TEMPS ;
+
+     * Un rapport au format pdf convenable, au contenu structuré, exhaustif et sans faute d'orthographe !
+
+
+\newpage
+\section{Notions préliminaires}
+
+Dans ce programme, on peut jouer en un contre un au Qwirckle.
+
+
+\newpage
+\section{Réalisation du projet}
+Lisa Barlet, Labat Valentin, Dioukhane Bara
+\section*{Introduction}
+décrit votre programme, ses fonctionnalités et son utilisation
+
+Version « humain vs. humain »
+Développer un programme qui permet à deux utilisateurs de jouer
+ une partie de Qwirkle en version 
+textuelle. Afin de représenter une tuile, utilisez des caractèr
+es spéciaux pour les différentes formes, 
+et la commande 
+TextColor
+pour les différentes couleurs. Voici la trame d’un jeu complet:
+le programme est lancé par la simple commande 
+./qwirkle
+le jeu est configuré et initialisé 
+les deux utilisateurs sont invités à tour de rôle à effectuer leur coup 
+le programme veille à ce que chaque coup soit autorisé selon les règles du jeu quand les tuiles sont épuisées, le programme détermine le gagnant et s’arrête. 
+Attention!  Avant  de  plonger  dans  le  code,  réfléchissez  bien  aux différents  éléments  de  votre application, par exemple : comment modéliser les tuiles? Comment modéliser le plateau de jeu ? 
+Comment  modéliser  un  coup  ?  Comment  détecter  la  légalité  d'un  coup  ?  Comment  afficher  l'état 
+actuel du jeu ? Quelles sont les interactions possibles avec l’
+utilisateur? etc.
+
+Version « humain vs. ordinateur »
+Une fois que vous détenez un programme humain vs. humain qui gère toutes les étapes d'un jeu, concevez  une  IA  qui  joue  par  elle-même  et  permet  de  disputer  une  partie  de  Qwirkle  contre l'ordinateur. Vous intégrerez aussi la possibilité pour l’ordinateur de jouer contre lui-même. Dans ce cas, le programme est lancé avec une option ‐
+j qui indique le type des deux joueurs (h=humain, 
+o=ordinateur), par exemple :
+
+IMPORTANT : A noter que par un défaut d'organisation, et donc un manque de temps, l'interface graphique, ainsi que la phase humain VS ordinateur n'ont pas été implémentées car pas dans un état d'avancement suffisant pour être intégré.
+
+\subsection{Mise en place de la pioche}
+Au tout début on a d'abord implémenté la pioche et les fonctions nécessaires pour en créer de nouvelles.
+\subsection{Mise en place de la pose}
+Ensuite, on s'est occupé de comment faire pour poser un jeton, mais n'avons malheureusement pas eu le temps d'implémenter toutes les règles.
+\subsection{Mise en place du tour}
+On a ensuite relié tout cela pour le mettre sous forme de tour.
+
+\subsection{Interface graphique}
+Cette section n'a malheureusement pas été traitée.
+
+\newpage
+\section{Avantages et limites de nos solutions}
+Malheureusement, tous les paramètres n'ont pas été inclus, et ce n'est qu'une version de base que l'on dispose alors.
+
+\newpage
+	\section*{Conclusion}
+	
+	Pour conclure, une meilleure organisation nous aurait permis de traiter le sujet plus en profondeur, ce qui nous montre bien la difficulté du travail en groupe, d'autant plus lorsque le sujet se complexifie, et que de nombreux cas de figure sont à envisager, et que l'on est dans le doute d'avoir fait, ou non, le bon choix.
+	\addcontentsline{toc}{chapter}{Conclusion}
+\end{document}
+

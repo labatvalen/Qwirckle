@@ -1,0 +1,192 @@
+\documentclass[a4paper, 11pt, openany]{report} %classe du document
+
+%% Dans le préambule %% 
+
+%% Page de garde
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[frenchb]{babel}
+\usepackage{libertine}
+\usepackage[pdftex]{graphicx}
+\usepackage{fancybox}
+\usepackage{amsmath}
+
+\usepackage{color}
+\usepackage{listings}
+\usepackage{caption}
+
+\newcounter{nalg}[chapter] % defines algorithm counter for chapter-level
+\renewcommand{\thenalg}{\thechapter .\arabic{nalg}} %defines appearance of the algorithm counter
+\DeclareCaptionLabelFormat{algocaption}{Algorithm \thenalg} % defines a new caption label as Algorithm x.y
+
+\lstnewenvironment{algorithm}[1][] %defines the algorithm listing environment
+{   
+    \refstepcounter{nalg} %increments algorithm number
+    \captionsetup{labelformat=algocaption,labelsep=colon} %defines the caption setup for: it ises label format as the declared caption label above and makes label and caption text to be separated by a ':'
+    \lstset{ %this is the stype
+        mathescape=true,
+        frame=tB,
+        numbers=left, 
+        numberstyle=\tiny,
+        basicstyle=\scriptsize, 
+        keywordstyle=\color{black}\bfseries\em,
+        keywords={,input, output, return, datatype, function, in, if, else, foreach, while, begin, end, } %add the keywords you want, or load a language as Rubens explains in his comment above.
+        numbers=left,
+        xleftmargin=.04\textwidth,
+        #1 % this is to add specific settings to an usage of this environment (for instnce, the caption and referable label)
+    }
+}
+{}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\newcommand{\hsp}{\hspace{20pt}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+    \newcommand\coord[3]{\begin{pmatrix}
+     #1 \\
+     #2 \\
+     #3
+     \end{pmatrix}}
+     
+%%%%% Les premiers packages %%%%%%%%%%%%%%%%%%%%%
+\usepackage[pdfencoding=auto, bookmarks=true, bookmarksopen=true, pdfusetitle]{hyperref}
+\usepackage{hhline}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{fancyhdr} %entêtes de pages%
+\pagestyle{fancy}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{luatextra}
+%%%%% vos packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{fancybox}
+\usepackage[normalem]{ulem}
+\usepackage{graphicx}
+
+%%%%% Les derniers packages %%%%%%%%%%%%%%%%%%%%%
+\usepackage[french]{babel} %réglages/syntaxe française   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% réglages des marges /feuille A4 %%%%%%%%%%%%%%
+\setlength{\hoffset}{-6pt}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{9pt}
+\setlength{\marginparwidth}{54pt}
+\setlength{\textwidth}{470pt}
+\setlength{\voffset}{-18pt}
+\setlength{\marginparsep}{17pt}
+\setlength{\topmargin}{0pt}
+\setlength{\headheight}{5pt}
+\setlength{\textheight}{23.2cm}
+\setlength{\headsep}{0.6cm}
+\setlength{\footskip}{1.cm}
+\setstretch{1.25}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand\headrulewidth{0.1pt} %épaisseur trait en haut de page%
+\renewcommand\footrulewidth{0.1pt} %épaisseur trait en bas de page%
+
+\renewcommand\headrulewidth{0.1pt} %épaisseur trait en haut de page%
+\renewcommand\footrulewidth{0.1pt} %épaisseur trait en bas de page%
+\lhead{LB-BD-VL}    %l left
+\rhead{Semestre 2}        %r right
+\chead{Rapport de Projet}      %c center
+\rfoot{\thepage}
+\cfoot{}
+
+%\fancyhf{} % clear all header and footer fields
+%\fancyfoot[RO,LE]{\thepage} %RO=right odd, RE=right even
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% mettre des guillemets francais ie << ou >>%%%%%%%%%%%%%%%%%%%%
+\newcommand{\guil}[1]{\og{}#1{}\fg}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% à propos du documents %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\titre{Rapport de Projet}
+\def\auteur{\textsc {Lisa BARLET}}
+\date{Novembre 2017}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% reglages PDF (juste avant begin{document}) %%%%%%
+\title{\titre}
+\author{\auteur}
+\hypersetup 
+   {backref=true,
+   pagebackref=true,
+   hyperindex=true,
+   colorlinks=true,
+   breaklinks=true,
+   urlcolor=black,
+   linkcolor=black,
+   citecolor=black,
+   bookmarks=true,
+   bookmarksopen=true,
+   pdftitle={\titre},
+   pdfauthor={\auteur},
+   pdfsubject={Latex},
+   pdfcreator={Kile},
+   pdfproducer={TexLive},
+   pdfstartview=Fit}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\begin{titlepage}
+  \begin{sffamily}
+  \begin{center}
+
+    \textsc{\LARGE École internationale des sciences \\ du traitement de l'information}\\[4cm]
+
+    \textsc{\huge {\fontfamily{pag}\selectfont Algorithmique et programmation procédurale}}\\[1.5cm]
+    
+
+    % Title
+    \HRule \\[0.6cm]
+    {\huge \bfseries Rapport de Projet : Qwirkle}
+    
+
+    \HRule \\[2cm]
+    \includegraphics[scale=0.3]{Images/LogoEISTI.jpg}
+    \\[2,10 cm]
+    
+    % Author and supervisor
+    \begin{minipage}{0.4\textwidth}
+      \begin{flushleft} \large
+        Lisa \textsc{BARLET}\\
+        Valentin \textsc{LABAT}\\
+        Bara \textsc{DIOUKHANE}\\ 
+      
+      \end{flushleft}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+      \begin{flushright} \large
+        Semestre 2 \\\\[0,20 cm]
+        Promotion 2022\\
+      \end{flushright}
+    \end{minipage}
+    \\[1,58 cm]
+    
+\vfill
+    % Bottom of the page
+   
+    {\large 21 Mai 2018 — 23 Juin 2018}
+
+  \end{center}
+  \end{sffamily}
+\end{titlepage}
+
+\thispagestyle{empty}
+
+\newpage
+
+    \tableofcontents
+
+\input Rapport.tex
+\end{document}
